@@ -202,7 +202,7 @@ export function History({
 				Start New Tour
 			</Button>
 			<Button
-				onClick={reset}
+				onClick={handleReset}
 				className="
                 bg-red-500
                 hover:bg-red-600
