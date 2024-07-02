@@ -2,8 +2,6 @@
 import { History } from "@/components/history";
 import { fetchBattles } from "../api/apiClient";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { reset } from "../api/apiClient";
 
 export default function Home() {
 	const [battles, setBattles] = useState([]);
@@ -23,21 +21,6 @@ export default function Home() {
 				setBattles={setBattles}
 				loading={loading}
 			/>
-			{/* red reset button */}
-			<Button
-				onClick={reset}
-				className="
-                bg-red-500
-                hover:bg-red-600
-                text-white
-                font-bold
-                py-2
-                px-4
-                rounded
-            "
-			>
-				Reset
-			</Button>
 		</main>
 	);
 }

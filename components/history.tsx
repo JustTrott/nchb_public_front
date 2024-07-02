@@ -19,7 +19,7 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { submitBattle, startTour } from "@/app/api/apiClient";
+import { submitBattle, startTour, reset } from "@/app/api/apiClient";
 import { toast } from "react-toastify";
 
 export function History({
@@ -59,6 +59,11 @@ export function History({
 	const handleStart = async (league: string) => {
 		await startTour(league);
 		toast("Started New Tour. Please reload");
+	};
+
+	const handleReset = async () => {
+		await reset();
+		toast("Reset");
 	};
 	// get battles that have highest .tour value
 	const highestTour = Math.max(...battles.map((battle) => battle.tour)) || 0;
@@ -195,6 +200,17 @@ export function History({
 			</div>
 			<Button className="w-full" onClick={() => handleStart("junior")}>
 				Start New Tour
+			</Button>
+			<Button
+				onClick={reset}
+				className="
+                bg-red-500
+                hover:bg-red-600
+                text-white
+                w-full
+            "
+			>
+				Reset
 			</Button>
 		</div>
 	);
