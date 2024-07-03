@@ -198,7 +198,7 @@ export function History({
 					))}
 				</div>
 			</div>
-			<Button className="w-full" onClick={() => handleStart("junior")}>
+			<Button className="w-full" onClick={() => handleStart("senior")}>
 				Start New Tour
 			</Button>
 			<Button

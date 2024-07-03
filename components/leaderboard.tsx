@@ -36,9 +36,6 @@ export function Leaderboard({ standings }: { standings: any }) {
 							<tr className="border-b border-muted">
 								<th className="py-3 px-4 font-medium">Team</th>
 								<th className="py-3 px-4 font-medium">
-									Initial Points
-								</th>
-								<th className="py-3 px-4 font-medium">
 									Tour 1
 								</th>
 								<th className="py-3 px-4 font-medium">
@@ -80,6 +77,9 @@ export function Leaderboard({ standings }: { standings: any }) {
 								<th className="py-3 px-4 font-medium">
 									Tour 7 CB
 								</th>
+								<th className="py-3 px-4 font-medium">
+									Total points
+								</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -90,9 +90,6 @@ export function Leaderboard({ standings }: { standings: any }) {
 								>
 									<td className="py-3 px-4">
 										{standing.name}
-									</td>
-									<td className="py-3 px-4">
-										{standing.qualPoints}
 									</td>
 									<td className="py-3 px-4">
 										{standing.tours.length > 0
@@ -163,6 +160,9 @@ export function Leaderboard({ standings }: { standings: any }) {
 										{standing.tours.length > 6
 											? standing.tours[6].CB
 											: "-"}
+									</td>
+									<td className="py-3 px-4">
+										{standing.total}
 									</td>
 								</tr>
 							))}

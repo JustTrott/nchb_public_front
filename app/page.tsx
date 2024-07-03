@@ -8,7 +8,7 @@ export default function Home() {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetchStandings("junior").then((data) => {
+		fetchStandings("senior").then((data) => {
 			setStandings(data);
 			setLoading(false);
 			console.log(data);
