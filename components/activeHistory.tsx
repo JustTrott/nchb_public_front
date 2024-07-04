@@ -46,53 +46,53 @@ export function ActiveHistory({
 			<div className="flex flex-col gap-4">
 				<h2 className="text-lg font-bold">Active Battles</h2>
 				<div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-					{activeBattles.length === 0 ||
-						(highestTour === 8 && (
-							<div className="text-card-foreground">
-								No active battles
-							</div>
-						))}
-					{activeBattles.map((battle) => (
-						<div
-							className="bg-card rounded-lg p-4 flex flex-col gap-2"
-							key={battle._id}
-						>
-							<div className="flex items-center justify-between gap-1">
-								<span className="text-card-foreground font-medium">
-									{battle.teams[0].name}
-								</span>
-								<div className="flex items-center gap-2">
-									<span className="text-card-foreground">
-										{battle.points[0]}
-									</span>
-								</div>
-							</div>
-							{battle.teams[1] && (
-								<div className="flex items-center justify-between gap-1">
-									<span className="text-card-foreground font-medium">
-										{battle.teams[1].name}
-									</span>
-									<div className="flex items-center gap-2">
-										<span className="text-card-foreground">
-											{battle.points[1]}
-										</span>
-									</div>
-								</div>
-							)}
-							{!battle.teams[1] && (
-								<div className="flex items-center justify-between gap-1">
-									<span className="text-card-foreground font-medium">
-										Jury
-									</span>
-									<div className="flex items-center gap-2">
-										<span className="text-card-foreground">
-											-
-										</span>
-									</div>
-								</div>
-							)}
+					{activeBattles.length === 0 || highestTour === 6 ? (
+						<div className="text-card-foreground">
+							No active battles
 						</div>
-					))}
+					) : (
+						activeBattles.map((battle) => (
+							<div
+								className="bg-card rounded-lg p-4 flex flex-col gap-2"
+								key={battle._id}
+							>
+								<div className="flex items-center justify-between gap-1">
+									<span className="text-card-foreground font-medium">
+										{battle.teams[0].name}
+									</span>
+									<div className="flex items-center gap-2">
+										<span className="text-card-foreground">
+											{battle.points[0]}
+										</span>
+									</div>
+								</div>
+								{battle.teams[1] && (
+									<div className="flex items-center justify-between gap-1">
+										<span className="text-card-foreground font-medium">
+											{battle.teams[1].name}
+										</span>
+										<div className="flex items-center gap-2">
+											<span className="text-card-foreground">
+												{battle.points[1]}
+											</span>
+										</div>
+									</div>
+								)}
+								{!battle.teams[1] && (
+									<div className="flex items-center justify-between gap-1">
+										<span className="text-card-foreground font-medium">
+											Jury
+										</span>
+										<div className="flex items-center gap-2">
+											<span className="text-card-foreground">
+												-
+											</span>
+										</div>
+									</div>
+								)}
+							</div>
+						))
+					)}
 				</div>
 			</div>
 		</div>

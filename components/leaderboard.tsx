@@ -70,18 +70,6 @@ export function Leaderboard({
 									Tour 5 CB
 								</th>
 								<th className="py-3 px-4 font-medium">
-									Tour 6
-								</th>
-								<th className="py-3 px-4 font-medium">
-									Tour 6 CB
-								</th>
-								<th className="py-3 px-4 font-medium">
-									Tour 7
-								</th>
-								<th className="py-3 px-4 font-medium">
-									Tour 7 CB
-								</th>
-								<th className="py-3 px-4 font-medium">
 									Total points
 								</th>
 							</tr>
@@ -145,26 +133,7 @@ export function Leaderboard({
 											? standing.tours[4].CB
 											: "-"}
 									</td>
-									<td className="py-3 px-4">
-										{standing.tours.length > 5
-											? standing.tours[5].points
-											: "-"}
-									</td>
-									<td className="py-3 px-4">
-										{standing.tours.length > 5
-											? standing.tours[5].CB
-											: "-"}
-									</td>
-									<td className="py-3 px-4">
-										{standing.tours.length > 6
-											? standing.tours[6].points
-											: "-"}
-									</td>
-									<td className="py-3 px-4">
-										{standing.tours.length > 6
-											? standing.tours[6].CB
-											: "-"}
-									</td>
+
 									<td className="py-3 px-4">
 										{standing.total}
 									</td>
