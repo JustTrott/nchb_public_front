@@ -79,6 +79,18 @@ export function ActiveHistory({
 									</div>
 								</div>
 							)}
+							{!battle.teams[1] && (
+								<div className="flex items-center justify-between gap-1">
+									<span className="text-card-foreground font-medium">
+										Jury
+									</span>
+									<div className="flex items-center gap-2">
+										<span className="text-card-foreground">
+											-
+										</span>
+									</div>
+								</div>
+							)}
 						</div>
 					))}
 				</div>
