@@ -7,6 +7,7 @@ export default function Home() {
 	const [standings, setStandings] = useState([]);
 	const [loading, setLoading] = useState(true);
 
+
 	useEffect(() => {
 		fetchStandings("senior").then((data) => {
 			setStandings(data);

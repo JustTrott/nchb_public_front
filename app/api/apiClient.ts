@@ -40,3 +40,11 @@ export const startTour = async (league: string) => {
 		tour: response.data,
 	});
 };
+// export const handleChange = async (selectedOption: any) => {
+// 	try {
+// 		const data = await fetchStandings(selectedOption.value);
+// 		setStandings(data);
+// 	} catch (error) {
+// 		console.error('Error fetching league data:', error);
+// 	}
+// };
