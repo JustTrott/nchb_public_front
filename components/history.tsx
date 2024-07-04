@@ -26,10 +26,12 @@ export function History({
 	battles,
 	setBattles,
 	loading,
+	league,
 }: {
 	battles: any[];
 	setBattles: (battles: any) => void;
 	loading: boolean;
+	league: string;
 }) {
 	if (loading) {
 		return <div>Loading...</div>;
@@ -65,12 +67,18 @@ export function History({
 		await reset();
 		toast("Reset");
 	};
+	const filteredBattles = battles.filter(
+		(battle) => battle.teams[0].league === league
+	);
 	// get battles that have highest .tour value
 	const highestTour = Math.max(...battles.map((battle) => battle.tour)) || 0;
-	const activeBattles = battles.filter(
+	console.log(highestTour);
+	const activeBattles = filteredBattles.filter(
 		(battle) => battle.tour === highestTour
 	);
-	const pastBattles = battles.filter((battle) => battle.tour < highestTour);
+	const pastBattles = filteredBattles.filter(
+		(battle) => battle.tour < highestTour
+	);
 	return (
 		<div className="bg-background rounded-lg border p-6 flex flex-col gap-6">
 			<div className="flex flex-col gap-4">
@@ -198,7 +206,7 @@ export function History({
 					))}
 				</div>
 			</div>
-			<Button className="w-full" onClick={() => handleStart("senior")}>
+			<Button className="w-full" onClick={() => handleStart(league)}>
 				Start New Tour
 			</Button>
 			<Button
