@@ -113,7 +113,7 @@ export function History({
 									</Button>
 								</div>
 							</div>
-							{battle.teams[1] && (
+							{battle.teams[1] ? (
 								<div className="flex items-center justify-between">
 									<span className="text-card-foreground font-medium">
 										{battle.teams[1].name}
@@ -136,6 +136,20 @@ export function History({
 										>
 											Submit
 										</Button>
+									</div>
+								</div>
+							) : (
+								<div className="flex items-center justify-between gap-1">
+									<span className="text-card-foreground font-medium">
+										Specific teams:{" "}
+										{battle.jury.specificTeams
+											.map((team: any) => team.name)
+											.join(", ")}
+									</span>
+									<div className="flex items-center gap-2">
+										<span className="text-card-foreground">
+											-
+										</span>
 									</div>
 								</div>
 							)}
@@ -176,7 +190,7 @@ export function History({
 									</Button>
 								</div>
 							</div>
-							{battle.teams[1] && (
+							{battle.teams[1] ? (
 								<div className="flex items-center justify-between">
 									<span className="text-card-foreground font-medium">
 										{battle.teams[1].name}
@@ -201,8 +215,7 @@ export function History({
 										</Button>
 									</div>
 								</div>
-							)}
-							{!battle.teams[1] && (
+							) : (
 								<div className="flex items-center justify-between gap-1">
 									<span className="text-card-foreground font-medium">
 										Specific teams:{" "}
